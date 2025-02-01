@@ -83,7 +83,8 @@ public function fetchexpenses(Request $req){
         $pid=session('pharma_id');
     $sid=expense::all()->last();
     $heads=expenseHead::all();
-        $ssid=$sid['id']+1;
+    $banks = Book::whereIn('type', ['Banks', 'Net Cash'])->get();
+        $ssid=$sid['id'] ?? 0+1;
         $dates=$req->pname;
         $date=date("Y-m");
 //    $stx=payment::with('book')->where('date','like', '%'.$date.'%')->where('pharma_id','=',$pid)->where('type','=','2')->get();
@@ -96,6 +97,7 @@ public function fetchexpenses(Request $req){
         'pros'=>round($pros,2),
         'sid'=>$ssid,
         'heads'=>$heads,
+        'banks'=>$banks,
     ]);
 }
   
@@ -158,6 +160,7 @@ if($result){
         $pamount=$req->pamount;
         $gdate=$req->ddate;
         $head=$req->head;
+        $contra=$req->contra;
       // $ppidc=book::where('name',$pname)->get();
       // foreach ($ppidc as $c){
         //   $sidx=$c['id'];
@@ -167,16 +170,28 @@ if($result){
         $product->id=$pid;
         $product->date=$gdate;
 $product->expenseHead_id=$head;
+$product->name=$contra;
 $product->details=$details;
 $product->amount=$pamount;
 $product->user=$uid;
 $product->pharma_id=$pharmaid;
 $product->save();
 $transaccount=new transaccount;
-$transaccount->name='34';
+$transaccount->name=$head;
 $transaccount->type="Expenses";
 $transaccount->cr="0";
 $transaccount->dr=$pamount;
+$transaccount->date=$gdate;
+$transaccount->inv=$pid;
+$transaccount->user=$uid;
+$transaccount->pharma_id=$pharmaid;
+$transaccount->bank_type=$contra;
+$transaccount->save();
+$transaccount=new transaccount;
+$transaccount->name=$contra;
+$transaccount->type="Expenses";
+$transaccount->dr="0";
+$transaccount->cr=$pamount;
 $transaccount->date=$gdate;
 $transaccount->inv=$pid;
 $transaccount->user=$uid;

@@ -9,9 +9,8 @@
             <option value="0">Select</option></select>
 	<span>Details</span><input type="text" id="paydetails" name="paydetails">
 	<span>Amount</span><input type="text" id="payamount" name="payamount">
-	<span>Contra Account</span><select id="contra">
-	    <option value="1">Cash In Hand</option>
-	    <option value="2">Cash In Bank</option>
+	<span>Contra Account</span><select id="contra"  name="contra">
+	    <option value="0">Select</option>
 	</select>
 	<input type="submit" id="subs" name="" class="btn btn-danger btn-visitor-delete">
 </form>
@@ -110,7 +109,7 @@ $.ajax({
         var bodyData = '';
         
         console.log(response.stx);
-        document.getElementById("pid").value = response.sid;
+        document.getElementById("pid").value = response.sid+1;
         document.getElementById("lpay").value = response.pros;
         $("tot").append(response.pros);
         $("tbody").html("");
@@ -136,6 +135,19 @@ var opt = document.createElement('option');
     opt.innerHTML = item.name;
     select.appendChild(opt);
         });
+        select = document.getElementById('contra');
+              $('#contra').empty();
+              var opt = document.createElement('option');
+    opt.value = "";
+    opt.innerHTML = "Select";
+    select.appendChild(opt);
+        $.each(response.banks,function(key,item){
+var opt = document.createElement('option');
+    opt.value = item.id;
+    opt.innerHTML = item.name;
+    select.appendChild(opt);
+        });
+
     }
 
 });

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\discount;
 use App\Models\town;
+use App\Models\book;
 use App\Models\company;
 use App\Models\cogroup;
 use App\Models\expenseHead;
@@ -126,11 +127,28 @@ if($result){
     $uid=session('user_id');
     $pid=session('pharma_id');
     $var=expenseHead::all();
+    $product=new book;
+$product->name=$req->item;
+$product->phone="0";
+$product->phone1="0";
+$product->address="0";
+$product->address1="0";
+$product->pmdc="0";
+$product->ntn="0";
+$product->acc="0";
+$product->acc1="0";
+$product->area="0";
+$product->type="Farm Expenses";
+$product->pharma_id=$pid;
+$product->user=$uid;
+$product->save();
+$lastInsertedId = $product->id;
     $product=new expenseHead;
+    $product->id=$lastInsertedId;  
 $product->name=$req->item;
 $result=$product->save();
 if($result){
-        return response()->json(['success'=>'Company Added successfully.','var'=>$var]);
+        return response()->json(['success'=>'Head Added successfully.','var'=>$var]);
         }
    }
    public function addcogroup(Request $req){
