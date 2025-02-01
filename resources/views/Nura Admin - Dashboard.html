@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://demo.bootstrap24.com/nura-admin-4/index.html -->
+<html lang="en" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Nura Admin - Dashboard</title>
+    <meta name="description" content="Dashboard | Nura Admin">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Your website">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://demo.bootstrap24.com/nura-admin-4/assets/images/favicon.ico">
+
+    <!-- Bootstrap CSS -->
+    <link href="./Nura Admin - Dashboard_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Font Awesome CSS -->
+    <link href="./Nura Admin - Dashboard_files/all.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="./Nura Admin - Dashboard_files/style.css" rel="stylesheet" type="text/css">
+
+    <!-- BEGIN CSS for this page -->
+    <link rel="stylesheet" type="text/css" href="./Nura Admin - Dashboard_files/Chart.min.css">
+    <link rel="stylesheet" type="text/css" href="./Nura Admin - Dashboard_files/datatables.min.css">
+    <!-- END CSS for this page -->
+<style type="text/css">/* Chart.js */
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style></head>
+
+<body class="widescreen adminbody">
+
+    <div id="main" class="">
+
+        <!-- top bar navigation -->
+        <div class="headerbar">
+
+            <!-- LOGO -->
+            <div class="headerbar-left">
+                <a href="https://demo.bootstrap24.com/nura-admin-4/index.html" class="logo">
+                    <img alt="Logo" src="./Nura Admin - Dashboard_files/logo.png">
+                    <span>Nura Admin</span>
+                </a>
+            </div>
+
+            <nav class="navbar-custom">
+
+                <ul class="list-inline float-right mb-0">
+                    <li class="list-inline-item dropdown notif">
+                        <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="https://demo.bootstrap24.com/nura-admin-4/index.html#" aria-haspopup="false" aria-expanded="false">
+                            <i class="far fa-envelope"></i>
+                            <span class="notif-bullet"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-arrow-success dropdown-lg">
+                            <!-- item-->
+                            <div class="dropdown-item noti-title">
+                                <h5>
+                                    <small>
+                                        <span class="label label-danger pull-xs-right">12</span>Mailbox</small>
+                                </h5>
+                            </div>
+
+                            <!-- item-->
+                            <a href="https://demo.bootstrap24.com/nura-admin-4/mail-all.html" class="dropdown-item notify-item">
+                                <p class="notify-details ml-0">
+                                    <b>John Doe</b>
+                                    <span>New message received</span>
+                                    <small class="text-muted">3 minutes ago</small>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="https://demo.bootstrap24.com/nura-admin-4/mail-all.html" class="dropdown-item notify-item">
+                                <p class="notify-details ml-0">
+                                    <b>Michael Smith</b>
+                                    <span>New message received</span>
+                                    <small class="text-muted">18 minutes ago</small>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="https://demo.bootstrap24.com/nura-admin-4/mail-all.html" class="dropdown-item notify-item">
+                                <p class="notify-details ml-0">
+                                    <b>John Lenons</b>
+                                    <span>New message received</span>
+                                    <small class="text-muted">Yesterday, 18:27</small>
+                                </p>
+                            </a>
+
+                            <!-- All-->
+                            <a href="https://demo.bootstrap24.com/nura-admin-4/mail-all.html" class="dropdown-item notify-item notify-all">
+                                View All Messages
+                            </a>
+
+                        </div>
+
+                    </li>
+
+                    <li class="list-inline-item dropdown notif">
+                        <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="https://demo.bootstrap24.com/nura-admin-4/index.html#" aria-haspopup="false" aria-expanded="false">
+                            <i class="far fa-bell"></i>
+                            <span class="notif-bullet"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-arrow-success dropdown-lg">
+                            <!-- item-->
+                            <div class="dropdown-item noti-title">
+                                <h5>
+                                    <small>
+                                        <span class="label label-danger pull-xs-right">5</span>Allerts</small>
+                                </h5>
+                            </div>
+
+                            <!-- item-->
+                            <a href="https://demo.bootstrap24.com/nura-admin-4/index.html#" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-faded">
+                                    <img src="./Nura Admin - Dashboard_files/avatar2.png" alt="img" class="rounded-circle img-fluid">
+                                </div>
+                                <p class="notify-details">
+                                    <b>John Doe</b>
+                                    <span>User registration</span>
+                                    <small class="text-muted">3 minutes ago</small>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="https://demo.bootstrap24.com/nura-admin-4/index.html#" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-faded">
+                                    <img src="./Nura Admin - Dashboard_files/avatar3.png" alt="img" class="rounded-circle img-fluid">
+                                </div>
+                                <p class="notify-details">
+                                    <b>Michael Cox</b>
+                                    <span>Task 2 completed</span>
+                                    <small class="text-muted">12 minutes ago</small>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="https://demo.bootstrap24.com/nura-admin-4/index.html#" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-faded">
+                                    <img src="./Nura Admin - Dashboard_files/avatar4.png" alt="img" class="rounded-circle img-fluid">
+                                </div>
+                                <p class="notify-details">
+                                    <b>Michelle Dolores</b>
+                                    <span>New job completed</span>
+                                    <small class="text-muted">35 minutes ago</small>
+                                </p>
+                            </a>
+
+                            <!-- All-->
+                            <a href="https://demo.bootstrap24.com/nura-admin-4/index.html#" class="dropdown-item notify-item notify-all">
+                                View All Allerts
+                            </a>
+
+                        </div>
+                    </li>
+
+
+                    <li class="list-inline-item dropdown notif">
+                        <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="https://demo.bootstrap24.com/nura-admin-4/index.html#" aria-haspopup="false" aria-expanded="false">
+                            <i class="fas fa-cog"></i>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-arrow-success dropdown-sm">
+                            <!-- item-->
+                            <div class="dropdown-item noti-title">
+                                <h5>
+                                    <small>Settings</small>
+                                </h5>
+                            </div>
+
+                            <!-- item-->
+                            <a href="https://demo.bootstrap24.com/nura-admin-4/index.html#" class="dropdown-item notify-item">
+                                <p class="notify-details ml-0">
+                                    <i class="fas fa-cog"></i>
+                                    <b>Settings 1</b>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="https://demo.bootstrap24.com/nura-admin-4/index.html#" class="dropdown-item notify-item">
+                                <p class="notify-details ml-0">
+                                    <i class="fas fa-cog"></i>
+                                    <b>Settings 2</b>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="https://demo.bootstrap24.com/nura-admin-4/index.html#" class="dropdown-item notify-item">
+                                <p class="notify-details ml-0">
+                                    <i class="fas fa-cog"></i>
+                                    <b>Settings 3</b>
+                                </p>
+                            </a>
+
+                        </div>
+
+                    </li>
+
+
+                    <li class="list-inline-item dropdown notif">
+                        <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="https://demo.bootstrap24.com/nura-admin-4/index.html#" aria-haspopup="false" aria-expanded="false">
+                            <img src="./Nura Admin - Dashboard_files/admin.png" alt="Profile image" class="avatar-rounded">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                            <!-- item-->
+                            <div class="dropdown-item noti-title">
+                                <h5 class="text-overflow">
+                                    <small>Hello, admin</small>
+                                </h5>
+                            </div>
+
+                            <!-- item-->
+                            <a href="https://demo.bootstrap24.com/nura-admin-4/profile.html" class="dropdown-item notify-item">
+                                <i class="fas fa-user"></i>
+                                <span>Profile</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="https://demo.bootstrap24.com/nura-admin-4/index.html#" class="dropdown-item notify-item">
+                                <i class="fas fa-power-off"></i>
+                                <span>Logout</span>
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <ul class="list-inline menu-left mb-0">
+                    <li class="float-left">
+                        <button class="button-menu-mobile open-left">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </li>
+                </ul>
+
+            </nav>
+
+        </div>
+        <!-- End Navigation -->
+
+        <!-- Left Sidebar -->
+        <div class="left main-sidebar">
+
+            <div class="sidebar-inner leftscroll">
+
+                <div id="sidebar-menu">
+
+                    <ul>
+                        <li class="submenu">
+                            <a class="active subdrop" href="https://demo.bootstrap24.com/nura-admin-4/index.html">
+                                <i class="fas fa-bars"></i>
+                                <span> Dashboard </span>
+                            </a>
+                        </li>
+
+                        <li class="submenu">
+                            <a href="https://demo.bootstrap24.com/nura-admin-4/users.html">
+                                <i class="fas fa-user"></i>
+                                <span> Users </span>
+                            </a>
+                        </li>
+
+                        <li class="submenu">
+                            <a href="https://demo.bootstrap24.com/nura-admin-4/blog.html">
+                                <i class="fas fa-file-alt"></i>
+                                <span> Blog </span>
+                            </a>
+                        </li>
+
+                        <li class="submenu">
+                            <a href="https://demo.bootstrap24.com/nura-admin-4/mail-all.html">
+                                <span class="label radius-circle bg-danger float-right">18</span>
+                                <i class="fas fa-envelope"></i>
+                                <span> Mailbox </span>
+                            </a>
+                        </li>
+
+                        <li class="submenu">
+                            <a href="https://demo.bootstrap24.com/nura-admin-4/slider.html">
+                                <i class="fas fa-photo-video"></i>
+                                <span> Slider </span>
+                            </a>
+                        </li>
+
+                        <li class="submenu">
+                            <a href="https://demo.bootstrap24.com/nura-admin-4/charts.html">
+                                <i class="fas fa-chart-line"></i>
+                                <span> Charts </span>
+                            </a>
+                        </li>
+
+                        <li class="submenu">
+                            <a id="tables" href="https://demo.bootstrap24.com/nura-admin-4/index.html#">
+                                <i class="fas fa-table"></i>
+                                <span> Tables </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/tables-basic.html">Basic Tables</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/tables-datatable.html">Data Tables</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="submenu">
+                            <a href="https://demo.bootstrap24.com/nura-admin-4/index.html#">
+                                <i class="fas fa-laptop"></i>
+                                <span> User Interface </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/ui-alerts.html">Alerts</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/ui-buttons.html">Buttons</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/ui-cards.html">Cards</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/ui-carousel.html">Carousel</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/ui-collapse.html">Collapse</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/ui-icons.html">Icons</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/ui-modals.html">Modals</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/ui-tooltips.html">Tooltips and Popovers</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="submenu">
+                            <a href="https://demo.bootstrap24.com/nura-admin-4/index.html#">
+                                <i class="fab fa-wpforms"></i>
+                                <span> Forms </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/forms-general.html">General Elements</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/forms-select2.html">Select2</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/forms-validation.html">Form Validation</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/forms-text-editor.html">Text Editors</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/forms-upload.html">Multiple File Upload</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/forms-datetime-picker.html">Date and Time Picker</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/forms-color-picker.html">Color Picker</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="submenu">
+                            <a href="https://demo.bootstrap24.com/nura-admin-4/index.html#">
+                                <i class="fas fa-file-image"></i>
+                                <span> Multimedia </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/media-fancybox.html">
+                                        <span class="label radius-circle bg-danger float-right">cool</span> Fancybox </a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/media-masonry.html">Masonry</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/media-lightbox.html">Lightbox</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/media-owl-carousel.html">Owl Carousel</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/media-image-magnifier.html">Image Magnifier</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="submenu">
+                            <a href="https://demo.bootstrap24.com/nura-admin-4/index.html#">
+                                <i class="fas fa-star"></i>
+                                <span> Plugins </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/star-rating.html">Star Rating</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/range-sliders.html">Range Sliders</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/tree-view.html">Tree View</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/sweetalert.html">SweetAlert</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/calendar.html">Calendar</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/counter-up.html">Counter-Up</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="submenu">
+                            <a href="https://demo.bootstrap24.com/nura-admin-4/index.html#">
+                                <i class="far fa-copy"></i>
+                                <span> Example Pages </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/page-pricing-tables.html">Pricing Tables</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/page-timeline.html">Timeline</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/page-invoice.html">Invoice</a>
+                                </li>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/page-blank.html">Blank Page</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="submenu">
+                            <a href="https://demo.bootstrap24.com/nura-admin-4/index.html#">
+                                <span class="label radius-circle bg-primary float-right">9</span>
+                                <i class="fas fa-indent"></i>
+                                <span> Menu Levels </span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/index.html#">
+                                        <span>Second Level</span>
+                                    </a>
+                                </li>
+                                <li class="submenu">
+                                    <a href="https://demo.bootstrap24.com/nura-admin-4/index.html#">
+                                        <span>Third Level</span>
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="https://demo.bootstrap24.com/nura-admin-4/index.html#">
+                                                <span>Third Level Item</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://demo.bootstrap24.com/nura-admin-4/index.html#">
+                                                <span>Third Level Item</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            </li><li class="submenu">
+                                <a class="pro" href="https://demo.bootstrap24.com/nura-admin-4/pro.html">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span> PRO Version </span>
+                                </a>
+                            </li>
+
+                            <li class="submenu">
+                                <a target="_blank" href="https://nura24.com/">
+                                    <i class="fas fa-th"></i>
+                                    <span> Nura24 Free Suite </span>
+                                </a>
+                            </li>
+
+                        
+
+                    </ul>
+
+                    <div class="clearfix"></div>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+        </div>
+        <!-- End Sidebar -->
+
+        <div class="content-page">
+
+            <!-- Start content -->
+            <div class="content">
+
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="breadcrumb-holder">
+                                <h1 class="main-title float-left">Dashboard</h1>
+                                <ol class="breadcrumb float-right">
+                                    <li class="breadcrumb-item">Home</li>
+                                    <li class="breadcrumb-item active">Dashboard</li>
+                                </ol>
+                                <div class="clearfix"></div>
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                    <!-- end row -->
+
+
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+                            <div class="card-box noradius noborder bg-danger">
+                                <i class="far fa-user float-right text-white"></i>
+                                <h6 class="text-white text-uppercase m-b-20">Users</h6>
+                                <h1 class="m-b-20 text-white counter">487</h1>
+                                <span class="text-white">12 Today</span>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+                            <div class="card-box noradius noborder bg-purple">
+                                <i class="fas fa-download float-right text-white"></i>
+                                <h6 class="text-white text-uppercase m-b-20">Downloads</h6>
+                                <h1 class="m-b-20 text-white counter">290</h1>
+                                <span class="text-white">12 Today</span>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+                            <div class="card-box noradius noborder bg-warning">
+                                <i class="fas fa-shopping-cart float-right text-white"></i>
+                                <h6 class="text-white text-uppercase m-b-20">Orders</h6>
+                                <h1 class="m-b-20 text-white counter">320</h1>
+                                <span class="text-white">25 Today</span>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+                            <div class="card-box noradius noborder bg-info">
+                                <i class="far fa-envelope float-right text-white"></i>
+                                <h6 class="text-white text-uppercase m-b-20">Messages</h6>
+                                <h1 class="m-b-20 text-white counter">58</h1>
+                                <span class="text-white">5 New</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end row -->
+
+
+                    
+                    <!-- end row -->
+
+
+
+                    
+                    <!-- end row-->
+
+                </div>
+                <!-- END container-fluid -->
+
+            </div>
+            <!-- END content -->
+
+        </div>
+        <!-- END content-page -->
+
+        <footer class="footer">
+            <span class="text-right">                
+                Copyright <a target="_blank" href="https://demo.bootstrap24.com/nura-admin-4/index.html#">Company</a>
+            </span>
+            <span class="float-right">
+                <!-- Copyright footer link MUST remain intact if you download free version. -->
+                <!-- You can delete the links only if you purchased the pro or extended version. -->
+                <!-- Purchase the pro or extended version with PHP version of this template: https://bootstrap24.com/template/nura-admin-4-free-bootstrap-admin-template -->
+                Powered by <a target="_blank" href="https://bootstrap24.com/" title="Download free Bootstrap templates"><b>Bootstrap24.com</b></a>
+            </span>
+        </footer>
+
+        <script src="./Nura Admin - Dashboard_files/modernizr.min.js.download"></script>
+        <script src="./Nura Admin - Dashboard_files/jquery.min.js.download"></script>
+        <script src="./Nura Admin - Dashboard_files/moment.min.js.download"></script>
+
+        <script src="./Nura Admin - Dashboard_files/popper.min.js.download"></script>
+        <script src="./Nura Admin - Dashboard_files/bootstrap.min.js.download"></script>
+
+        <script src="./Nura Admin - Dashboard_files/detect.js.download"></script>
+        <script src="./Nura Admin - Dashboard_files/fastclick.js.download"></script>
+        <script src="./Nura Admin - Dashboard_files/jquery.blockUI.js.download"></script>
+        <script src="./Nura Admin - Dashboard_files/jquery.nicescroll.js.download"></script>
+
+        <!-- App js -->
+        <script src="./Nura Admin - Dashboard_files/admin.js.download"></script>
+
+    </div>
+    <!-- END main -->
+
+    <!-- BEGIN Java Script for this page -->
+    <script src="./Nura Admin - Dashboard_files/Chart.min.js.download"></script>
+    <script src="./Nura Admin - Dashboard_files/datatables.min.js.download"></script>
+
+    <!-- Counter-Up-->
+    <script src="./Nura Admin - Dashboard_files/jquery.waypoints.min.js.download"></script>
+    <script src="./Nura Admin - Dashboard_files/jquery.counterup.min.js.download"></script>
+
+    <!-- dataTabled data -->
+    <script src="./Nura Admin - Dashboard_files/data_datatables.js.download"></script>
+
+    <!-- Charts data -->
+    <script src="./Nura Admin - Dashboard_files/data_charts_dashboard.js.download"></script>
+    <script>
+        $(document).on('ready', function() {
+            // data-tables
+            $('#dataTable').DataTable({
+                data: dataSet,
+                columns: [{
+                    title: "Name"
+                }, {
+                    title: "Position"
+                }, {
+                    title: "Office"
+                }, {
+                    title: "Extn."
+                }, {
+                    title: "Date"
+                }, {
+                    title: "Salary"
+                }]
+            });
+
+            // counter-up
+            $('.counter').counterUp({
+                delay: 10,
+                time: 600
+            });
+        });
+    </script>
+    <!-- END Java Script for this page -->
+
+
+
+</body></html>
