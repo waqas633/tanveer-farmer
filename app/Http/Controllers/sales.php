@@ -717,7 +717,7 @@ $transaccount->save();
 $transaccount=new transaccount;
 $transaccount->name=$purid;
 $transaccount->type="WholeSales";
-$transaccount->dr=$purchaseramount;
+$transaccount->dr=$formeramount;
 $transaccount->cr="0";
 $transaccount->date=$date;
 $transaccount->inv=$inv;
