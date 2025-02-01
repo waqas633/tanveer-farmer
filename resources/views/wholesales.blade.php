@@ -8,7 +8,7 @@
 <div class="container">
 
     
-    <h1 align="center">GROUP OF SAQIB POULTRY FARMS</h1>
+    <h1 align="center">{{session('firm_name')}}</h1>
 
   
     
@@ -26,7 +26,7 @@
 <label style="margin-left:10px; ">Amount</label><input type="text" class="readonly-input" disabled style="margin-left:10px; " id="formeramount" name="formeramount"><label style="margin-left:10px; ">Net Balance</label><input type="text" class="readonly-input" disabled style="margin-left:10px; " name="formernetbalance" id=formernerbalance><br/>
 <label style="margin-left:10px; ">Purchaser</label><input type="text" id="purid"  style="width: 30px;margin-left:10px;display: none" name="purid"><input type="text" id="partP" name="partP" style="width: 350px; " readonly="readonly" disabled> <button style="margin-left:10px; "  class="btn btn-success"  data-toggle="modal" data-target="#myModal" id="purchaserName" onclick="purchaseSelect()" onkeyup="purchaseSelect()">DEALERS</button> <label style="margin-left:10px; ">Balance</label><input type="text" style="margin-left:10px;width: 100px; " class="readonly-input" disabled name="partPBalance" id="partPBalance"><label style="margin-left:10px; display:none">Rate</label><input type="text"  onkeyup="calcultedvalue()" id="purchaserrate" name="purchaserrate" style="margin-left:10px;width: 100px;display:none " value="{{$datrate->close ?? 0}}"><br/>
 <label style="margin-left:10px; ">Amount</label><input type="text" disabled class="readonly-input" style="margin-left:10px; " id="purchaseramount" name="purchaseramount"><label style="margin-left:10px; ">Net Balance</label><input type="text" disabled style="margin-left:10px; " class="readonly-input" id="purchasernetbalance" name="purchasernetbalance">
-<label style="margin-left:10px; ">Profit</label><input type="text" disabled class="readonly-input" style="margin-left:10px; " id="formprofit" name="formprofit">
+<label style="margin-left:10px; display:none;">Profit</label><input type="text" disabled class="readonly-input" style="margin-left:10px; " id="formprofit" name="formprofit">
 <br>
 <div style="margin-left: 70px;position: relative;display: -webkit-inline-box;display: -ms-inline-flexbox;display: inline-flex;vertical-align: middle;padding:20px;">
 <button class="btn btn-success"  style="margin-left:10px;border-radius: 0 40px 0 38px;padding: 12px 20px;" name="subs" id="subs"    onsubmit = "fetchstudent()" onkeyup= "fetchstudent()" >Save</button>
@@ -88,9 +88,9 @@
             <th  width="5%">Rate</th>
             <th  width="10%">Amount</th>
             <th  width="17%">Purchaser</th>
-            <th  width="5%">Rate</th>
+            <!-- <th  width="5%">Rate</th>
             <th  width="10%">Amount</th>
-            <th  width="5%">Profit</th>
+            <th  width="5%">Profit</th> -->
         </tr>
     </thead>
         <tbody id="ttbody">
@@ -725,7 +725,8 @@ var table_profit_amount=0;
         $.each(response.var,function(key,item){
             $("#ttbody").html("");
      bodyData+="<tr>"
-                    bodyData+="<td>"+ids+"</td><td>"+item.van+"</td><td>"+item.weight+"</td><td>"+item.rbook.name+"</td><td>"+item.frate+"</td><td>"+item.famount+"</td><td>"+item.pbook.name+"</td><td>"+item.prate+"</td><td>"+item.pamount+"</td><td>"+item.profit+"</td>";
+                    bodyData+="<td>"+ids+"</td><td>"+item.van+"</td><td>"+item.weight+"</td><td>"+item.rbook.name+"</td><td>"+item.frate+"</td><td>"+item.famount+"</td><td>"+item.pbook.name+"</td>";
+                    // <td>"+item.prate+"</td><td>"+item.pamount+"</td><td>"+item.profit+"</td>";
                     
                     bodyData+="</tr>";
                     ids=ids+1;
@@ -734,7 +735,8 @@ var table_profit_amount=0;
                     table_purchaser_amount=table_purchaser_amount+parseFloat(item.pamount);
                     table_profit_amount=table_profit_amount+parseFloat(item.profit);
         })
-        bodyData+="<td></td><td></td><td>"+table_weight+"</td><td></td><td></td><td>"+table_former_amount+"</td><td></td><td></td><td>"+table_purchaser_amount+"</td><td>"+table_profit_amount+"</td>";
+        bodyData+="<td></td><td></td><td>"+table_weight+"</td><td></td><td></td><td>"+table_former_amount+"</td>";
+        // <td></td><td></td><td>"+table_purchaser_amount+"</td><td>"+table_profit_amount+"</td>";
         $("#ttbody").append(bodyData);
         bodyData = '';
         $.each(response.var,function(key,item){

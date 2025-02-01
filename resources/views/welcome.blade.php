@@ -9,7 +9,7 @@
                                 <h6 class="m-b-20 text-white counter">
 <i class="fa fa-home" style="font-size:30px; margin-top:-40px;"></i>
 <label style="font-size: 20px;">Welcome</label>
-<label id="ltr" style="font-size: 20px;">kkk</label>
+<label id="ltr" style="font-size: 20px;">{{session('firm_name')}}</label>
 
                                     <label style="font-size: 20px; margin-left:20px;"><?php echo date('Y-m-d'); ?></label>
                                     

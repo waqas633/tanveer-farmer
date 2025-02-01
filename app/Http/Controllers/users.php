@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\letterhead;
 use Illuminate\Http\Request;
 use Session;
 class users extends Controller
@@ -45,12 +46,14 @@ $result=$product->save();
 $name=$req->name;
 $password=$req->password;
 $result=User::where([['name', $name],['password',$password]])->first();
+$lth=letterhead::where('id',$result->pharma_id)->first();
 if($result){
     $uid=$result['pharma_id'];
     $userid=$result['id'];
         $req->session()->put('user',$name);
         $req->session()->put('pharma_id',$uid);
         $req->session()->put('user_id',$userid);
+        $req->session()->put('firm_name',$lth->name);
         //Session::set('user', $name);
         
 

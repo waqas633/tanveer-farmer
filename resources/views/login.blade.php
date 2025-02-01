@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <link rel="shortcut icon" type="image/x-icon" href="{{url('public/files/logo.png')}}">
-    <title>Bhagtanwala Poltry Solution</title>
+    <title>{{session('firm_name')}}</title>
     <meta name="Description" content="This Raheem Bakhash Furniture & Foam Center software is to be developed by #softexpakistan and here you can find all types of retails sales purchase and books keeping">
     <link rel="stylesheet" type="text/css" href="{{url('css/bootstrap.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{url('css/font-awesome.min.css')}}">

@@ -18,9 +18,9 @@
             <th  width="5%">Rate</th>
             <th  width="7%">Total</th>
             <th  width="17%">Purchaser</th>
-            <th  width="5%">Rate</th>
+            <!-- <th  width="5%">Rate</th>
             <th  width="7%">Total</th>
-            <th  width="5%">Profit</th>
+            <th  width="5%">Profit</th> -->
         </tr>
         </thead>
         <tbody id="ttbody">
@@ -94,7 +94,8 @@ $.each(response.var, function(key, item) {
             // Append final dateformer subtotal row within the date group
             if (dateformer !== undefined) {
                 bodyData += "<tr style='background-color:#A3C9AA'>"
-                bodyData += "<td colspan='2'><b>Total</b></td><td>" + table_weight2 + "</td><td></td><td>" + table_former_amount2 + "</td><td></td><td></td><td>" + table_purchaser_amount2 + "</td><td>" + table_profit_amount2 + "</td>";
+                bodyData += "<td colspan='2'><b>Total</b></td><td>" + table_weight2 + "</td><td></td><td>" + table_former_amount2 + "</td><td></td><td></td>";
+                // <td>" + table_purchaser_amount2 + "</td><td>" + table_profit_amount2 + "</td>";
                 bodyData += "</tr>"
 
                 // Reset dateformer subtotal variables
@@ -106,7 +107,8 @@ $.each(response.var, function(key, item) {
 
             // Append the overall subtotal for the date
             bodyData += "<tr style='background-color:#A3C9AA'>"
-            bodyData += "<td colspan='2'><b>Sub Total</b></td><td>" + table_weight1 + "</td><td></td><td>" + table_former_amount1 + "</td><td></td><td></td><td>" + table_purchaser_amount1 + "</td><td>" + table_profit_amount1 + "</td>";
+            bodyData += "<td colspan='2'><b>Sub Total</b></td><td>" + table_weight1 + "</td><td></td><td>" + table_former_amount1 + "</td><td></td><td></td>";
+            // <td>" + table_purchaser_amount1 + "</td><td>" + table_profit_amount1 + "</td>";
             bodyData += "</tr>"
 
             // Reset subtotal variables after appending the subtotal row
@@ -117,7 +119,7 @@ $.each(response.var, function(key, item) {
         }   
 
         bodyData += "<tr style='background-color:#c5c5c5;'>"
-        bodyData += "<td colspan='9'><b>" + item.date + "</b></td>";
+        bodyData += "<td colspan='6'><b>" + item.date + "</b></td>";
         bodyData += "</tr>";
 
         date = item.date;
@@ -128,7 +130,8 @@ $.each(response.var, function(key, item) {
         if (dateformer !== undefined) {
             // Append subtotal row for the previous dateformer within the date group
             bodyData += "<tr style='background-color:#A3C9AA'>"
-            bodyData += "<td colspan='2'><b>Total</b></td><td>" + table_weight2 + "</td><td></td><td>" + table_former_amount2 + "</td><td></td><td></td><td>" + table_purchaser_amount2 + "</td><td>" + table_profit_amount2 + "</td>";
+            bodyData += "<td colspan='2'><b>Total</b></td><td>" + table_weight2 + "</td><td></td><td>" + table_former_amount2 + "</td><td></td>";
+            // <td>" + table_purchaser_amount2 + "</td><td>" + table_profit_amount2 + "</td>";
             bodyData += "</tr>"
 
             // Reset dateformer subtotal variables after appending the subtotal row
@@ -139,7 +142,7 @@ $.each(response.var, function(key, item) {
         }
 
         bodyData += "<tr style='background-color:#888888;'>"
-        bodyData += "<td colspan='9'><b>" + item.rbook.name + "</b></td>";
+        bodyData += "<td colspan='6'><b>" + item.rbook.name + "</b></td>";
         bodyData += "</tr>";
 
         dateformer = item.rbook.name;
@@ -162,7 +165,8 @@ $.each(response.var, function(key, item) {
     table_profit_amount += parseFloat(item.profit);
 
     bodyData += "<tr>"
-    bodyData += "<td>" + ids + "</td><td>" + item.van + "</td><td>" + item.weight + "</td><td>" + item.frate + "</td><td>" + item.famount + "</td><td>" + item.pbook.name + "</td><td>" + item.prate + "</td><td>" + item.pamount + "</td><td>" + item.profit + "</td>";
+    bodyData += "<td>" + ids + "</td><td>" + item.van + "</td><td>" + item.weight + "</td><td>" + item.frate + "</td><td>" + item.famount + "</td><td>" + item.pbook.name + "</td>";
+    // <td>" + item.prate + "</td><td>" + item.pamount + "</td><td>" + item.profit + "</td>";
     bodyData += "</tr>";
 
     ids++;
@@ -171,18 +175,21 @@ $.each(response.var, function(key, item) {
 // Append final dateformer subtotal row if needed
 if (dateformer !== undefined) {
     bodyData += "<tr style='background-color:#A3C9AA'>"
-    bodyData += "<td colspan='2'><b>Total</b></td><td>" + table_weight2 + "</td><td></td><td>" + table_former_amount2 + "</td><td></td><td></td><td>" + table_purchaser_amount2 + "</td><td>" + table_profit_amount2 + "</td>";
+    bodyData += "<td colspan='2'><b>Total</b></td><td>" + table_weight2 + "</td><td></td><td>" + table_former_amount2 + "</td><td></td>";
+    // <td>" + table_purchaser_amount2 + "</td><td>" + table_profit_amount2 + "</td>";
     bodyData += "</tr>"
 }
 
 // Append final subtotal row
 bodyData += "<tr style='background-color:#A3C9AA'>"
-bodyData += "<td colspan='2'><b>Sub Total</b></td><td>" + table_weight1 + "</td><td></td><td>" + table_former_amount1 + "</td><td></td><td></td><td>" + table_purchaser_amount1 + "</td><td>" + table_profit_amount1 + "</td>";
+bodyData += "<td colspan='2'><b>Sub Total</b></td><td>" + table_weight1 + "</td><td></td><td>" + table_former_amount1 + "</td><td></td>";
+// <td>" + table_purchaser_amount1 + "</td><td>" + table_profit_amount1 + "</td>";
 bodyData += "</tr>"
 
 // Append grand total row
 bodyData += "<tr style='background-color:#C68484'>"
-bodyData += "<td colspan='2'><b>Grand Total</b></td><td>" + table_weight + "</td><td></td><td>" + table_former_amount + "</td><td></td><td></td><td>" + table_purchaser_amount + "</td><td>" + table_profit_amount + "</td>";
+bodyData += "<td colspan='2'><b>Grand Total</b></td><td>" + table_weight + "</td><td></td><td>" + table_former_amount + "</td><td></td>";
+// <td>" + table_purchaser_amount + "</td><td>" + table_profit_amount + "</td>";
 var sa = 0;
 var dis = 0;
 console.log(response.sbook);
