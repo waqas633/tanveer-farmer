@@ -270,12 +270,12 @@ for (var i = 0; i < rows12.length; i++) {
     var cells = this.getElementsByTagName("td");
     var rowData = [];
     for (var j = 0; j < cells.length; j++) {
-      if(partyType=="Former"){
+      if(partyType=="FARMS"){
         document.getElementById("partN").value=cells[1].textContent;
         document.getElementById("fid").value=cells[0].textContent;
         document.getElementById("partNBalance").value=cells[3].textContent;
       }
-      if(partyType=="Purchaser"){
+      if(partyType=="DEALERS"){
         document.getElementById("partP").value=cells[1].textContent;
         document.getElementById("purid").value=cells[0].textContent;
         document.getElementById("partPBalance").value=cells[3].textContent;
@@ -816,11 +816,11 @@ var table_profit_amount=0;
        // alert(inv);
        // alert(party);
        if(purid==''){
-           alert("Please set Purchasr");
+           alert("Please set Farms");
            return;
        }
        if(fid==''){
-           alert("Please set Former");
+           alert("Please set Dealer");
            return;
        }
        if(van==''){
