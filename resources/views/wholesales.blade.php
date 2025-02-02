@@ -362,7 +362,7 @@ partyType2=$("#searchTyping").find(':selected').text();
 //   }
 function formerSelect() {
      document.getElementById("searchInputParty").value='';
-    partyType = "Former";
+    partyType = "FARMS";
     document.getElementById("searchTyping").value = "1";
     // console.log(partyType);
     var newparty = partyType.trim().toLowerCase();
@@ -377,7 +377,7 @@ function formerSelect() {
 
   function purchaseSelect(){
        document.getElementById("searchInputParty").value='';
-    partyType="Purchaser";
+    partyType="DEALERS";
     // document.getElementById("searchTyping").value = "2";
     // console.log(partyType);
     // var newparty=partyType.trim().toLowerCase()
