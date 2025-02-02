@@ -75,7 +75,7 @@ $dated=recovery::with('book')->whereBetween('date', [$from, $to])->where('pharma
     $acctype=accountType::all();
     $banks=bank::all();
     $sid1=bankRecovery::all()->last();
-        $ssid1=$sid1['id']+1;
+        $ssid1=$sid1['id'] ?? 0+1;
         $items = (string)$ssid1;
         $date=date("Y-m-d");
         $stx=bankRecovery::with('pbook')->with('rbook')->with('bank')->where('date',$date)->orderBy('date','DESC')->where('pharma_id','=',$pid)->get();
