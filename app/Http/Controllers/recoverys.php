@@ -377,6 +377,25 @@ $transaccount->inv=$product->id;
 $transaccount->pharma_id=$phid;
 $transaccount->user=$uid;
 $transaccount->bank_type="0";
+$transaccount->save();
+$cash_id=book::where('name', 'like', '%cash%')->first();
+$transaccount=new transaccount;
+$transaccount->name=$cash_id->id;
+$transaccount->type="CashRecovery";
+if($type=="2"){
+$transaccount->dr=$amount;
+$transaccount->cr="0";
+}
+if($type=="1"){
+    $transaccount->cr=$amount;
+    $transaccount->dr="0";
+    }
+$transaccount->date=$date;
+$transaccount->inv=$product->id;
+$transaccount->pharma_id=$phid;
+$transaccount->user=$uid;
+$transaccount->bank_type="0";
+$result=$transaccount->save();
 // $transaccount->save();
 // $transaccount=new transaccount;
 // $transaccount->name=$pid;
@@ -388,7 +407,7 @@ $transaccount->bank_type="0";
 // $transaccount->pharma_id=$phid;
 // $transaccount->user=$uid;
 // $transaccount->bank_type=$bank_id;
-$result=$transaccount->save();
+
 if($result){
          return response()->json(['success'=>'Book saved successfully.']);
         }
