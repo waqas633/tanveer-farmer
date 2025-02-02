@@ -438,7 +438,7 @@ $transaccount1 = Transaccount::where('type', 'WholeSales')
                             ->limit(1)
                             ->first();
 // $transaccount=new transaccount;
-$transaccount1->name=$pid;
+// $transaccount1->name=$pid;
 $transaccount1->dr=$purchaseramount;
 $transaccount1->date=$date;
 $result=$transaccount1->save();
