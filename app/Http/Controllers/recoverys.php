@@ -321,6 +321,7 @@ if($result){
     // `id`, `date`, `recevier`, `pay`, `bank_id`, `amount`, `discription`, `uid
         
 // $product->save();
+$cash_id=book::where('name', 'like', '%cash%')->first();
 $product=new bankRecovery;
 if($type=="1"){
   
@@ -376,9 +377,9 @@ $transaccount->date=$date;
 $transaccount->inv=$product->id;
 $transaccount->pharma_id=$phid;
 $transaccount->user=$uid;
-$transaccount->bank_type="0";
+$transaccount->bank_type=$cash_id->id;
 $transaccount->save();
-$cash_id=book::where('name', 'like', '%cash%')->first();
+// $cash_id=book::where('name', 'like', '%cash%')->first();
 $transaccount=new transaccount;
 $transaccount->name=$cash_id->id;
 $transaccount->type="CashRecovery";
@@ -394,7 +395,7 @@ $transaccount->date=$date;
 $transaccount->inv=$product->id;
 $transaccount->pharma_id=$phid;
 $transaccount->user=$uid;
-$transaccount->bank_type="0";
+$transaccount->bank_type=$rid;
 $result=$transaccount->save();
 // $transaccount->save();
 // $transaccount=new transaccount;
