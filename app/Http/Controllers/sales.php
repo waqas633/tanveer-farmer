@@ -429,6 +429,7 @@ $stock->uid=$uid;
 $stock->save();
 $transaccount = Transaccount::where('type', 'WholeSales')
                             ->where('inv', $pinv)->first();
+$transaccount->name=$fid;
 $transaccount->cr=$formeramount;
 $transaccount->date=$date;
 $transaccount->save();
@@ -438,7 +439,7 @@ $transaccount1 = Transaccount::where('type', 'WholeSales')
                             ->limit(1)
                             ->first();
 // $transaccount=new transaccount;
-// $transaccount1->name=$pid;
+$transaccount1->name=$purid;
 $transaccount1->dr=$purchaseramount;
 $transaccount1->date=$date;
 $result=$transaccount1->save();
